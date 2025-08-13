@@ -21,12 +21,13 @@
         "test": "npm run build && npm run dev",
         "lint": "eslint \"src/**/*.ts\" --fix",
         "jest": "jest",
-        "jest:watch": "jest -o --watch"
+        "jest:watch": "jest -o --watch",
+        "vercel-build": "npm install --legacy-peer-deps && npm run build"
     },
     "devDependencies": {
         "@types/jest": "^27.0.3",
         "@types/lodash.clonedeep": "^4.5.6",
-        "@types/node": "^18.0.0",
+        "@types/node": "^20.19.0",
         "@typescript-eslint/eslint-plugin": "^5.9.0",
         "@typescript-eslint/parser": "^5.9.0",
         "@vitejs/plugin-react": "^4.2.1",
