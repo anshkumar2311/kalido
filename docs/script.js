@@ -21,13 +21,13 @@ let responseTimeout;
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 recognition.continuous = false;
 recognition.interimResults = false;
-recognition.lang = 'en-US';
+recognition.lang = "en-US";
 
 // Initialize speech synthesis
 const synth = window.speechSynthesis;
 
 // Initialize AI (replace with your API key)
-const genAI = new GoogleGenerativeAI("AIzaSyDdxS5w-Rqua9jEqnPB9B79HsNhUcsGKvw");
+const genAI = new GoogleGenerativeAI("Api key");
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 // Start or Stop Voice Chat
@@ -44,8 +44,8 @@ function startVoiceChat() {
     if (isListening || isSpeaking) return;
     chatActive = true;
     isListening = true;
-    updateStatus('Listening...');
-    updateButtonText('End Voice Chat');
+    updateStatus("Listening...");
+    updateButtonText("End Voice Chat");
 
     recognition.start();
 
@@ -60,7 +60,7 @@ recognition.onresult = async (event) => {
     clearTimeout(silenceTimeout);
     const transcript = event.results[0][0].transcript;
     isListening = false;
-    updateStatus('Processing...');
+    updateStatus("Processing...");
 
     try {
         // Set response timeout (15 seconds max)
@@ -79,8 +79,8 @@ recognition.onresult = async (event) => {
         let chunks = splitText(answer, 200);
         speakChunks(chunks);
     } catch (error) {
-        console.error('Error getting AI response:', error);
-        updateStatus('Error processing response');
+        console.error("Error getting AI response:", error);
+        updateStatus("Error processing response");
         stopChat();
     }
 };
@@ -112,7 +112,7 @@ function speakChunks(chunks) {
     utterance.pitch = 1.0;
 
     utterance.onstart = () => {
-        updateStatus('Speaking...');
+        updateStatus("Speaking...");
         isSpeaking = true;
     };
 
@@ -121,7 +121,7 @@ function speakChunks(chunks) {
             speakChunks(chunks); // Speak next chunk
         } else {
             isSpeaking = false;
-            updateStatus('Waiting for your response...');
+            updateStatus("Waiting for your response...");
             startVoiceChat(); // Restart recognition after speaking
         }
     };
@@ -137,13 +137,13 @@ function stopChat() {
     recognition.stop();
     clearTimeout(silenceTimeout);
     clearTimeout(responseTimeout);
-    updateStatus('Chat stopped. Click to restart.');
-    updateButtonText('Start Voice Chat');
+    updateStatus("Chat stopped. Click to restart.");
+    updateButtonText("Start Voice Chat");
 }
 
 // Update button text
 function updateButtonText(text) {
-    const voiceButton = document.getElementById('voiceButton');
+    const voiceButton = document.getElementById("voiceButton");
     if (voiceButton) {
         voiceButton.textContent = text;
     }
@@ -151,7 +151,7 @@ function updateButtonText(text) {
 
 // Update status display
 function updateStatus(message) {
-    const statusElement = document.getElementById('status');
+    const statusElement = document.getElementById("status");
     if (statusElement) {
         statusElement.textContent = message;
     }
@@ -159,16 +159,16 @@ function updateStatus(message) {
 
 // Create UI elements
 function createUI() {
-    const voiceButton = document.createElement('button');
-    voiceButton.textContent = 'Start Voice Chat';
-    voiceButton.id = 'voiceButton';
-    voiceButton.className = 'voice-button';
-    voiceButton.addEventListener('click', toggleVoiceChat);
+    const voiceButton = document.createElement("button");
+    voiceButton.textContent = "Start Voice Chat";
+    voiceButton.id = "voiceButton";
+    voiceButton.className = "voice-button";
+    voiceButton.addEventListener("click", toggleVoiceChat);
     document.body.appendChild(voiceButton);
 
-    const statusElement = document.createElement('div');
-    statusElement.id = 'status';
-    statusElement.className = 'status-indicator';
+    const statusElement = document.createElement("div");
+    statusElement.id = "status";
+    statusElement.className = "status-indicator";
     document.body.appendChild(statusElement);
 }
 
@@ -207,34 +207,23 @@ const styles = `
         font-size: 14px;
     }
 `;
-const styleSheet = document.createElement('style');
+const styleSheet = document.createElement("style");
 styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
 
 // Error handling
 recognition.onerror = (event) => {
-    console.error('Speech recognition error:', event.error);
+    console.error("Speech recognition error:", event.error);
     isListening = false;
-    updateStatus('Error: ' + event.error);
+    updateStatus("Error: " + event.error);
     stopChat();
 };
 
 recognition.onend = () => {
     if (chatActive && !isSpeaking) {
-        updateStatus('Waiting for your response...');
+        updateStatus("Waiting for your response...");
     }
 };
-
-
-
-
-
-
-
-
-
-
-
 
 // renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });

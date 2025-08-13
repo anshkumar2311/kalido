@@ -1,5 +1,6 @@
-import { XYZ, RotationOrder, EulerRotation } from "../Types";
-import { Vector } from "..";
+import { EulerRotation, RotationOrder } from "../Types";
+// import { XYZ } from "../Types";
+// import { Vector } from "..";
 
 /** Euler rotation class. */
 export default class Euler {
