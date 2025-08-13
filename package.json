@@ -12,17 +12,12 @@
         "dev": "vite docs",
         "prebuild": "npm run lint && npm run fmt && rimraf dist",
         "build": "vite build",
-        "build:lib": "tsc -p .",
-        "build:watch": "vite build --watch && npm run build:lib:watch",
-        "build:lib:watch": "tsc-watch -p .",
-        "serve": "vite",
+        "serve": "vite preview",
         "prepare": "npm run build:lib",
         "fmt": "prettier --write \"src/**/*.ts\"",
         "test": "npm run build && npm run dev",
         "lint": "eslint \"src/**/*.ts\" --fix",
-        "jest": "jest",
-        "jest:watch": "jest -o --watch",
-        "vercel-build": "npm install --legacy-peer-deps && npm run build"
+        "vercel-build": "npm run build"
     },
     "devDependencies": {
         "@types/jest": "^27.0.3",
