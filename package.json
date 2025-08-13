@@ -12,12 +12,17 @@
         "dev": "vite docs",
         "prebuild": "npm run lint && npm run fmt && rimraf dist",
         "build": "vite build",
+        "build:lib": "tsc && vite build",
         "serve": "vite preview",
         "prepare": "npm run build:lib",
         "fmt": "prettier --write \"src/**/*.ts\"",
         "test": "npm run build && npm run dev",
         "lint": "eslint \"src/**/*.ts\" --fix",
         "vercel-build": "npm run build"
+    },
+    "dependencies": {
+        "kalidokit": "^1.1.5",
+        "lodash.clonedeep": "^4.5.0"
     },
     "devDependencies": {
         "@types/jest": "^27.0.3",
@@ -27,7 +32,6 @@
         "@typescript-eslint/parser": "^5.9.0",
         "@vitejs/plugin-react": "^4.2.1",
         "eslint": "^8.6.0",
-        "lodash.clonedeep": "^4.5.0",
         "prettier": "^2.4.1",
         "rimraf": "^3.0.2",
         "rollup-plugin-friendly-type-imports": "^1.0.1",
@@ -36,8 +40,7 @@
         "typescript": "^4.9.4",
         "vite": "^7.1.2",
         "vite-plugin-banner": "0.1.3",
-        "vite-plugin-ts": "^1.1.8",
-        "kalidokit": "^1.1.5"
+        "vite-plugin-ts": "^1.1.8"
     },
     "prettier": {
         "tabWidth": 4,
@@ -46,9 +49,9 @@
         "singleQuote": false
     },
     "bugs": {
-        "url": "github.com/anshkumar2311/kalido/issues"
+        "url": "https://github.com/anshkumar2311/kalido/issues"
     },
-    "homepage": "github.com/anshkumar2311/kalido#readme",
+    "homepage": "https://github.com/anshkumar2311/kalido#readme",
     "keywords": [
         "mediapipe",
         "tensorflow",
@@ -57,6 +60,6 @@
         "finger-tracking",
         "detection"
     ],
-    "author": "ansh",
-    "year": "2024-2025"
+    "author": "Ansh Kumar",
+    "license": "MIT"
 }
