@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- HTML Meta Tags -->
+    <title>Sukku - Anonymous Health Consultation with Avatar</title>
+    <meta
+      name="description"
+      content="Track face and body rigs just your browser webcam!"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- <meta property="twitter:domain" content="kit.kalidoface.com" /> yha pr change krna hai -->
+    <meta property="twitter:url" content="https://kit.kalidoface.com/" />
+    <meta name="twitter:title" content="Sukku - Anonymous Health Consultation with Avatar" />
+    <meta
+      name="twitter:description"
+      content="Sukku enables anonymous doctor consultations through a lifelike avatar with AI-driven face and body rigging."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.glitch.com/239c5934-4d83-4c5c-bef6-44dcdb04c8fb%2Fkalidoface-meta.jpg?v=1630110302224"
+    />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://yeemachine.github.io/kalidoface-live2d-models/Icons/icon-circle.svg"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/holistic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-speech-cognitive-services@7.1.3/dist/speech-sdk.min.js"></script>
+    <!--     Basic Three.js -->
+    <script src="https://unpkg.com/three@0.133.0/build/three.js"></script>
+    <!--     GLTF Loader for Three.js -->
+    <script src="https://unpkg.com/three@0.133.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!--     Orbit Controls for Three.js -->
+    <script src="https://unpkg.com/three@0.133.0/examples/js/controls/OrbitControls.js"></script>
+    <!--     VRM Loader for Three.js -->
+    <script src="https://unpkg.com/@pixiv/three-vrm@0.6.7/lib/three-vrm.js"></script>
+    <!--     Mediapipe or Tensorflow.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/holistic.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--     Mediapipe Drawing Tools -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--     Mediapipe Camera Tools -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="preview">
+      <video class="input_video" width="1280px" height="720px"></video>
+      <canvas class="guides"></canvas>
+      <section>
+        <!-- <a href="/live2d/"><p>Live2D</p></a> -->
+        <a class="current" href="/"><p>VRM</p></a>
+      </section>
+    </div>
+    <h1 class="notranslate">
+      <a href="https://3d.kalidoface.com">SUKKU</a>
+    </h1>
+    <!-- <button id="voiceButton">Start Listening</button> -->
+
+    <!-- <p class="linkOut">
+      Powered by  T-rex
+       <a id="full" href="#">the full Vtuber App</a>!
+    </p> -->
+    <script type="module">
+      import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+    </script>
+    <script src="./script.js" type="module" defer></script>
+
+  </body>
+</html>
