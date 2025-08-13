@@ -36,10 +36,7 @@
         "typescript": "^4.9.4",
         "vite": "^7.1.2",
         "vite-plugin-banner": "0.1.3",
-        "vite-plugin-ts": "^1.1.8"
-    },
-    "dependencies": {
-        "@google/generative-ai": "^0.24.1",
+        "vite-plugin-ts": "^1.1.8",
         "kalidokit": "^1.1.5"
     },
     "prettier": {
