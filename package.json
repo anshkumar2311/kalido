@@ -2,6 +2,7 @@
     "name": "kalido",
     "version": "1.1.5",
     "repository": "github:anshkumar2311/kalido",
+    "description": "Blendshape and kinematics calculator for Mediapipe/Tensorflow.js Face, Eyes, Pose, and Finger tracking models.",
     "main": "dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
@@ -10,23 +11,25 @@
     "scripts": {
         "dev": "vite docs",
         "prebuild": "npm run lint && npm run fmt && rimraf dist",
-        "build": "vite build && npm run build:lib",
-        "build:watch": "vite build --watch && npm run build:lib:watch",
+        "build": "vite build",
         "build:lib": "tsc -p .",
+        "build:watch": "vite build --watch && npm run build:lib:watch",
         "build:lib:watch": "tsc-watch -p .",
         "serve": "vite",
-        "prepare": "npm run build",
+        "prepare": "npm run build:lib",
         "fmt": "prettier --write \"src/**/*.ts\"",
         "test": "npm run build && npm run dev",
         "lint": "eslint \"src/**/*.ts\" --fix",
         "jest": "jest",
-        "jest:watch": "jest -o --watch "
+        "jest:watch": "jest -o --watch"
     },
     "devDependencies": {
         "@types/jest": "^27.0.3",
         "@types/lodash.clonedeep": "^4.5.6",
+        "@types/node": "^18.0.0",
         "@typescript-eslint/eslint-plugin": "^5.9.0",
         "@typescript-eslint/parser": "^5.9.0",
+        "@vitejs/plugin-react": "^4.2.1",
         "eslint": "^8.6.0",
         "lodash.clonedeep": "^4.5.0",
         "prettier": "^2.4.1",
@@ -34,10 +37,14 @@
         "rollup-plugin-friendly-type-imports": "^1.0.1",
         "ts-jest": "^27.1.1",
         "tsc-watch": "^4.5.0",
-        "typescript": "^4.4.4",
-        "vite": "^6.1.0",
+        "typescript": "^4.9.4",
+        "vite": "^7.1.2",
         "vite-plugin-banner": "0.1.3",
         "vite-plugin-ts": "^1.1.8"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.24.1",
+        "kalidokit": "^1.1.5"
     },
     "prettier": {
         "tabWidth": 4,
@@ -45,7 +52,6 @@
         "printWidth": 120,
         "singleQuote": false
     },
-    "description": "Blendshape and kinematics calculator for Mediapipe/Tensorflow.js Face, Eyes, Pose, and Finger tracking models.",
     "bugs": {
         "url": "github.com/anshkumar2311/kalido/issues"
     },
@@ -59,9 +65,5 @@
         "detection"
     ],
     "author": "ansh",
-    "year": "2024-2025",
-    "dependencies": {
-        "@google/generative-ai": "^0.24.1",
-        "kalidokit": "^1.1.5"
-    }
+    "year": "2024-2025"
 }

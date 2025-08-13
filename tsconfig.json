@@ -1,12 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "lib": [
-            "ESNext",
-            "ESNext.Array",
-            "DOM"
-        ],
-        "module": "es6",
+        "target": "ESNext",
+        "lib": ["ESNext", "ESNext.Array", "DOM"],
+        "module": "ESNext",
         "moduleResolution": "node",
         "outDir": "dist",
         "declaration": true,
@@ -16,13 +12,11 @@
         "strictFunctionTypes": true,
         "strictPropertyInitialization": true,
         "strictBindCallApply": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "types": ["node"]
     },
-    "exclude": [
-        "node_modules",
-        "tests",
-        "dist"
-    ],
-    "include": [
-        "src/**/*"
-, "docs"    ]
+    "exclude": ["node_modules", "tests", "dist"],
+    "include": ["src/**/*", "docs"]
 }
