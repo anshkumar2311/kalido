@@ -53,8 +53,8 @@ const loader = new THREE.GLTFLoader();
 loader.crossOrigin = "anonymous";
 // Import model from URL, add your own model here
 loader.load(
-    "/models/avatar1.vrm", // Replace with your VRM model URL
-    // "https://cdn.glitch.com/29e07830-2317-4b15-a044-135e73c7f840%2FAshtra.vrm?v=1630342336981"
+    // "/models/avatar1.vrm", // Replace with your VRM model URL
+    "https://cdn.glitch.com/29e07830-2317-4b15-a044-135e73c7f840%2FAshtra.vrm?v=1630342336981",
     // "./models/avatar1.vrm",
     // "./models/model1.vrm",
 
